@@ -1,0 +1,636 @@
+{
+	"info": {
+		"_postman_id": "0b110542-24b7-444d-9050-957307c12e3c",
+		"name": "backend_community_rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Development Request Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('status code should be 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response header Content-Type should be application/json', () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"pm.test('response body should be an object', () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"pm.test('response body should have correct property and value', () => {\r",
+							"\r",
+							"    const responseJson = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseJson).to.haveOwnProperty('http_response');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('status');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('data');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('data').to.haveOwnProperty('message');\r",
+							"\r",
+							"    pm.expect(responseJson.http_response).to.equals(200);\r",
+							"\r",
+							"    pm.expect(responseJson.status).to.equals('success');\r",
+							"\r",
+							"    pm.expect(responseJson.data).to.be.an('object');\r",
+							"    pm.expect(responseJson.data.message).to.equals('Uraa... Permintaan bergabung telah dikirimkan.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"github_username\" : \"belajarqywok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backend-community-rest-alfariqyraihan-qnetics.vercel.app/api/join",
+					"protocol": "https",
+					"host": [
+						"backend-community-rest-alfariqyraihan-qnetics",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"join"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Development Request Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"github_username\" : \"belajarqywok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-community-rest-alfariqyraihan-qnetics.vercel.app/api/join",
+							"protocol": "https",
+							"host": [
+								"backend-community-rest-alfariqyraihan-qnetics",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"join"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:48:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "sin1::sin1::z2jgx-1676825290952-416bad7ca773"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"http_response\": 200,\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"Uraa... Permintaan bergabung telah dikirimkan.\"\n    }\n}"
+				},
+				{
+					"name": "Development Request Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"github_username\" : \"belajarqywok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-community-rest-alfariqyraihan-qnetics.vercel.app/api/join",
+							"protocol": "https",
+							"host": [
+								"backend-community-rest-alfariqyraihan-qnetics",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"join"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 17:06:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "sin1::sin1::md997-1676826373563-50e3383f1f6c"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"http_response\": 200,\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"Uraa... Permintaan bergabung telah dikirimkan.\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Production Request Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('status code should be 200', () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response header Content-Type should be application/json', () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"pm.test('response body should be an object', () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"pm.test('response body should have correct property and value', () => {\r",
+							"\r",
+							"    const responseJson = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseJson).to.haveOwnProperty('http_response');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('status');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('data');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('data').to.haveOwnProperty('message');\r",
+							"\r",
+							"    pm.expect(responseJson.http_response).to.equals(200);\r",
+							"\r",
+							"    pm.expect(responseJson.status).to.equals('success');\r",
+							"\r",
+							"    pm.expect(responseJson.data).to.be.an('object');\r",
+							"    pm.expect(responseJson.data.message).to.equals('Uraa... Permintaan bergabung telah dikirimkan.');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"github_username\" : \"belajarqywok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://backend-community-rest.vercel.app/api/join",
+					"protocol": "https",
+					"host": [
+						"backend-community-rest",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"join"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Production Request Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"github_username\" : \"belajarqywok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-community-rest.vercel.app/api/join",
+							"protocol": "https",
+							"host": [
+								"backend-community-rest",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"join"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:47:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "sin1::sin1::9fh7f-1676825277911-37460e0f316b"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"http_response\": 200,\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"Uraa... Permintaan bergabung telah dikirimkan.\"\n    }\n}"
+				},
+				{
+					"name": "Production Request Test",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"github_username\" : \"belajarqywok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://backend-community-rest.vercel.app/api/join",
+							"protocol": "https",
+							"host": [
+								"backend-community-rest",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"join"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "108"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 17:05:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "sin1::sin1::72v4f-1676826356616-19352ff33a5d"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"http_response\": 200,\n    \"status\": \"success\",\n    \"data\": {\n        \"message\": \"Uraa... Permintaan bergabung telah dikirimkan.\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Not Found Route Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('status code should be 404', () => {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test('response header Content-Type should be application/json', () => {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"pm.test('response body should be an object', () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an('object');\r",
+							"});\r",
+							"\r",
+							"pm.test('response body should have correct property and value', () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseJson).to.haveOwnProperty('code');\r",
+							"    pm.expect(responseJson).to.haveOwnProperty('message');\r",
+							"\r",
+							"    pm.expect(responseJson.code).to.equals('PAGE_NOT_FOUND');\r",
+							"    pm.expect(responseJson.message).to.equals('Page not found');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://backend-community-rest.vercel.app/api/join/cwjnwueihu392uhwe",
+					"protocol": "https",
+					"host": [
+						"backend-community-rest",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"join",
+						"cwjnwueihu392uhwe"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Not Found Route Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backend-community-rest.vercel.app/api/join/cwjnwueihu392uhwe",
+							"protocol": "https",
+							"host": [
+								"backend-community-rest",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"join",
+								"cwjnwueihu392uhwe"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:49:13 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "sin1::sin1::zfr4j-1676825353920-118e1e25682f"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"PAGE_NOT_FOUND\",\n    \"message\": \"Page not found\"\n}"
+				},
+				{
+					"name": "Not Found Route Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://backend-community-rest.vercel.app/api/join/cwjnwueihu392uhwe",
+							"protocol": "https",
+							"host": [
+								"backend-community-rest",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"join",
+								"cwjnwueihu392uhwe"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Feb 2023 16:58:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "sin1::sin1::d4mj4-1676825917430-3639c28c9125"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"PAGE_NOT_FOUND\",\n    \"message\": \"Page not found\"\n}"
+				}
+			]
+		}
+	]
+}
